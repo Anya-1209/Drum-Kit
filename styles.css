@@ -1,0 +1,119 @@
+/* Reset some default styles */
+body, h1 {
+  margin: 0;
+  padding: 0;
+}
+
+/* Background and fonts */
+body {
+  background-color: #0a192f;
+  font-family: 'Arvo', sans-serif;
+  color: #dbe6fd;
+  text-align: center;
+}
+
+/* Header styles */
+header {
+  background-color: #1d3557;
+  padding: 20px 0;
+}
+
+.title {
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Drum button styles */
+.drum-button {
+  border: none;
+  border-radius: 50%;
+  color: #474839;
+  font-size: 2rem;
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  cursor: pointer;
+  position: relative; /* Position relative for pseudo-elements */
+  overflow: hidden; /* Hide overflow to clip the pseudo-element */
+  transition: transform 0.1s;
+}
+
+/* Pseudo-element for background image */
+.drum-button::before {
+  content: ''; /* Required content for pseudo-elements */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* Ensure the background images cover the button */
+  background-repeat: no-repeat; /* Prevent background image repetition */
+  opacity: 0; /* Initially transparent */
+  transition: opacity 0.3s;
+}
+
+/* Define background images for each button class */
+.w::before {
+  background-image: url("images/tom1.png");
+}
+
+.a::before {
+  background-image: url("images/tom2.png");
+}
+
+.s::before {
+  background-image: url("images/tom3.png");
+}
+
+.d::before {
+  background-image: url("images/tom4.png");
+}
+
+.j::before {
+  background-image: url("images/snare.png");
+}
+
+.k::before {
+  background-image: url("images/crash.png");
+}
+
+.l::before {
+  background-image: url("images/kick.png");
+}
+
+/* Hover effect to reveal the background image */
+.drum-button:hover::before {
+  opacity: 1; /* Fully visible on hover */
+}
+
+/* Button animation */
+.pressed {
+  transform: scale(0.95);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer styles */
+footer {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #a8dadc;
+}
+
+/* Responsive layout for drum buttons */
+.drum-set {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10% auto;
+  max-width: 500px;
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 768px) {
+  .drum-button {
+    font-size: 2.5rem;
+    width: 100px;
+    height: 100px;
+  }
+}
